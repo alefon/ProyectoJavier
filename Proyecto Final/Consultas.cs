@@ -15,9 +15,7 @@ namespace Proyecto_Final
             Console.Write("Ingrese el nombre del producto: ");
             string nombre = Console.ReadLine().ToLower();
 
-            var productosEncontrados = inventario.Productos
-                                    .Where(p => p.Nombre.ToLower().Contains(nombre))
-                                    .ToList();
+            var productosEncontrados = inventario.listarProductos().Where(p => p.Nombre.ToLower().Contains(nombre)).ToList();
 
             if (productosEncontrados.Count > 0)
             {
@@ -39,7 +37,7 @@ namespace Proyecto_Final
             Console.Write("Ingrese el código del producto: ");
             string codigo = Console.ReadLine();
 
-            Producto producto = inventario.Productos.Find(p => p.Codigo == codigo);
+            Producto producto = inventario.listarProductos().Find(p => p.Codigo == codigo);
 
             if (producto != null)
             {
@@ -52,16 +50,10 @@ namespace Proyecto_Final
         }
 
         // Método para mostrar la información de un producto
-        private void MostrarProducto(Producto producto)
+        private string MostrarProducto(Producto producto)
         {
-            Console.WriteLine("=== Información del Producto ===");
-            Console.WriteLine($"Proveedor: {producto.Proveedor}");
-            Console.WriteLine($"Nombre: {producto.Nombre}");
-            Console.WriteLine($"Descripción: {producto.Descripcion}");
-            Console.WriteLine($"Código: {producto.Codigo}");
-            Console.WriteLine($"Unidades disponibles: {producto.Unidades}");
-            Console.WriteLine($"Precio: {producto.Precio:C}");
-            Console.WriteLine("-----------------------------");
+            string info_producto = producto.ToString();
+            return info_producto;            
         }
     }
 }

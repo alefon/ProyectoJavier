@@ -123,14 +123,36 @@ namespace Proyecto_Final
             Console.Write("Seleccione una opción: ");
 
             int opcion = Convert.ToInt32(Console.ReadLine());
-
+            Producto producto = new Producto();
             switch (opcion)
             {
                 case 1:
-                    inventario.ConsultarProductoPorNombre();
+                    Console.Write("Ingrese el nombre del producto:");
+                    string nombre = Console.ReadLine();
+                    producto = inventario.ConsultarProductoPorNombre(nombre);
+                                        if (producto != null)
+                    {
+                        Console.Write(producto);
+                    }
+                    else
+                    {
+                        Console.Write("El nombre suministrado no correspnde a ningún producto");
+                    }
                     break;
                 case 2:
-                    inventario.ConsultarProductoPorCodigo();
+                    Console.Write("Ingrese el código del producto:");
+                    string codigo = Console.ReadLine();
+                    producto = inventario.ConsultarProductoPorCodigo(codigo);
+
+                    if (producto != null)
+                    {
+                        Console.Write(producto);
+                    }
+                    else
+                    {
+                        Console.Write("El código suministrado no correspnde a ningún producto");
+                    }
+
                     break;
                 default:
                     Console.WriteLine("Opción no válida.");

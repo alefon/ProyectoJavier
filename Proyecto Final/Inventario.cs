@@ -22,7 +22,7 @@ namespace Proyecto_Final
         {
             try
             {
-                string[] lineas = File.ReadAllLines("inventario.txt");
+                string[] lineas = File.ReadAllLines("../../../inventario.txt");
                 foreach (string linea in lineas)
                 {
                     string[] datos = linea.Split(',');
@@ -115,50 +115,18 @@ namespace Proyecto_Final
         }
 
         // Consultar producto por nombre
-        public void ConsultarProductoPorNombre()
+        public Producto ConsultarProductoPorNombre(string nombre)
         {
-            Console.Write("Ingrese el Nombre del Producto: ");
-            string nombre = Console.ReadLine();
             Producto producto = productos.Find(p => p.Nombre.ToLower() == nombre.ToLower());
-
-            if (producto != null)
-            {
-                MostrarProducto(producto);
-            }
-            else
-            {
-                Console.WriteLine("Producto no encontrado.");
-            }
+            return producto;        
         }
 
         // Consultar producto por código
-        public void ConsultarProductoPorCodigo()
+        public Producto ConsultarProductoPorCodigo(string codigo)
         {
-            Console.Write("Ingrese el Código del Producto: ");
-            string codigo = Console.ReadLine();
             Producto producto = productos.Find(p => p.Codigo == codigo);
-
-            if (producto != null)
-            {
-                MostrarProducto(producto);
-            }
-            else
-            {
-                Console.WriteLine("Producto no encontrado.");
-            }
+            return producto;
         }
-
-        // Mostrar detalles del producto
-        private void MostrarProducto(Producto producto)
-        {
-            Console.WriteLine("Proveedor: " + producto.Proveedor);
-            Console.WriteLine("Nombre: " + producto.Nombre);
-            Console.WriteLine("Descripción: " + producto.Descripcion);
-            Console.WriteLine("Código: " + producto.Codigo);
-            Console.WriteLine("Unidades: " + producto.Unidades);
-            Console.WriteLine("Precio: " + producto.Precio);
-        }
-
         // Guardar inventario en archivo
         private void GuardarInventario()
         {
@@ -169,13 +137,18 @@ namespace Proyecto_Final
                 {
                     lineas.Add($"{producto.Proveedor},{producto.Nombre},{producto.Descripcion},{producto.Codigo},{producto.Unidades},{producto.Precio}");
                 }
-                File.WriteAllLines("inventario.txt", lineas);
+                File.WriteAllLines("../../../inventario.txt", lineas);
                 Console.WriteLine("Inventario actualizado correctamente.");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error al guardar el inventario: " + ex.Message);
             }
+        }
+    
+        public List<Producto> listarProductos()
+        {
+            return productos;
         }
 
         // Limpiar el inventario (vaciar la lista de productos)

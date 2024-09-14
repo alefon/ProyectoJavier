@@ -45,7 +45,7 @@ namespace Proyecto_Final
                     if (codigo.ToLower() == "salir")
                         break;
 
-                    Producto producto = inventario.BuscarProductoPorCodigo(codigo);
+                    Producto producto = inventario.ConsultarProductoPorCodigo(codigo);
                     if (producto != null)
                     {
                         Console.Write($"Ingrese la cantidad de {producto.Nombre} a comprar: ");

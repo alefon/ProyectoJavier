@@ -8,27 +8,24 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\maxla\\.nuget\\packages\\": {}
+    "C:\\Users\\Alejandro\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maxla\\source\\repos\\Proyecto Final\\Proyecto Final\\Proyecto Final.csproj",
+      "projectUniqueName": "D:\\Alejandro\\Documents\\Raw\\Proyecto Final\\Proyecto Final\\Proyecto Final\\Proyecto Final.csproj",
       "projectName": "Proyecto Final",
-      "projectPath": "C:\\Users\\maxla\\source\\repos\\Proyecto Final\\Proyecto Final\\Proyecto Final.csproj",
-      "packagesPath": "C:\\Users\\maxla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maxla\\source\\repos\\Proyecto Final\\Proyecto Final\\obj\\",
+      "projectPath": "D:\\Alejandro\\Documents\\Raw\\Proyecto Final\\Proyecto Final\\Proyecto Final\\Proyecto Final.csproj",
+      "packagesPath": "C:\\Users\\Alejandro\\.nuget\\packages\\",
+      "outputPath": "D:\\Alejandro\\Documents\\Raw\\Proyecto Final\\Proyecto Final\\Proyecto Final\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\maxla\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Alejandro\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -67,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
